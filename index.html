@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Links -->
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="./favicons/favicon-16x16.png" />
-    <title>Proyecto Colaborativo HACKABOSS</title>
+    <script defer src="script.js"></script>
+    <title>Pokefinder</title>
   </head>
   <body>
     <header>
-      <h1>Proyecto Colaborativo</h1>
+      <h1>¡Encuentra tu Pokémon!</h1>
     </header>
     <main>
-      <div id="inputFinder">
-        <input type="text" id="name" name="name" placeholder="Qué Pokemon te interesa?" />
+      <img src="#" alt="pokémon seleccionado" class="pokemon_imagen" />
+
+      <h2 class="pokemon_info">
+        <span class="pokemon_numero"></span>
+        <span class="pokemon_nombre"></span>
+      </h2>
+
+      <form id="input">
+        <input type="search" class="input" name="nombre" placeholder="Qué Pokemon te interesa?" required />
+      </form>
+
+      <div class="botones">
+        <button class="boton anterior">&lt; Anterior</button>
+        <button class="boton siguiente">Siguiente &gt;</button>
       </div>
+
+      <img src="./images/pokedex.jpeg" alt="imagen pokedex" class="pokedex" />
     </main>
-    <script src="script.js"></script>
   </body>
 </html>
