@@ -1,34 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Links -->
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="./favicons/favicon-16x16.png" />
+
+    <!-- Script -->
     <script defer src="script.js"></script>
+
+    <!-- Title -->
     <title>Pokefinder</title>
   </head>
   <body>
-    <header>
-      <h1>¡Encuentra tu Pokémon!</h1>
-    </header>
+    <!-- Main -->
     <main>
-      <img src="#" alt="pokémon seleccionado" class="pokemon_imagen" />
+      <section>
+        <img src="#" alt="pokémon seleccionado" class="pokemon_imagen" />
+        <img src="#" alt="pokémon shiny" class="pokemon_shiny" />
+      </section>
 
-      <h2 class="pokemon_info">
-        <span class="pokemon_numero"></span>
+      <h1 class="pokemon_info">
+        <span class="pokemon_numero"></span> -
+        <!-- Separar número y nombre -->
         <span class="pokemon_nombre"></span>
-      </h2>
+      </h1>
 
-      <form id="input">
-        <input type="search" class="input" name="nombre" placeholder="Qué Pokemon te interesa?" required />
+      <!-- Lista atributos del Pokémon -->
+      <section>
+        <ul class="pokemon_datos">
+          <li id="pokemon_altura"></li>
+          <li id="pokemon_peso"></li>
+          <li id="pokemon_hp"></li>
+          <li id="pokemon_ataque"></li>
+          <li id="pokemon_ataque_especial"></li>
+          <li id="pokemon_defensa"></li>
+          <li id="pokemon_defensa_especial"></li>
+          <li id="velocidad"></li>
+          <li id="tipo_1"></li>
+          <li id="tipo_2"></li>
+        </ul>
+      </section>
+
+      <!-- Formulario búsqueda -->
+      <form class="busqueda">
+        <input type="search" class="input" placeholder="Qué Pokemon buscas?" required />
+        <ul id="coincidencias"></ul>
+        <!-- Creamos ul vacío para añadir li de coincidencias en js -->
       </form>
 
-      <div class="botones">
+      <!-- Botones -->
+      <span class="botones">
         <button class="boton anterior">&lt; Anterior</button>
+        <button class="boton variocolor">Shiny</button>
         <button class="boton siguiente">Siguiente &gt;</button>
-      </div>
+      </span>
+
+      <!-- Añadimos imagen pokedex -->
       <img src="./images/pokedex.jpeg" alt="imagen pokedex" class="pokedex" />
     </main>
   </body>
