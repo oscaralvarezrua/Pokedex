@@ -22,7 +22,16 @@ main {
 
 .pokedex {
   width: 100%;
-  max-width: 1005px;
+  max-width: 600px;
+}
+
+.fondo {
+  display: block;
+  position: absolute;
+  bottom: 39%;
+  left: 37%;
+  z-index: -1;
+  height: 20%;
 }
 
 #input {
