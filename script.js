@@ -97,6 +97,16 @@ const cargarPokemon = async (pokemon) => {
     pokemonImagen.style.display = "none";
     pokemonNombre.innerHTML = "Not found :(";
     pokemonNumero.innerHTML = "";
+    pokemonAltura.innerHTML = "";
+    pokemonPeso.innerHTML = "";
+    pokemonHp.innerHTML = "";
+    pokemonAtaque.innerHTML = "";
+    pokemonAtaqueEspecial.innerHTML = "";
+    pokemonDefensa.innerHTML = "";
+    pokemonDefensaEspecial.innerHTML = "";
+    pokemonVelocidad.innerHTML = "";
+    pokemonTipo1.innerHTML = "";
+    pokemonTipo2.innerHTML = "";
   }
 };
 
