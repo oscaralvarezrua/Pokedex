@@ -3,6 +3,8 @@
 // Declaración de variables
 const pokemonNombre = document.querySelector(".pokemon_nombre");
 const pokemonNumero = document.querySelector(".pokemon_numero");
+/* const pokemonInfo = document.querySelector("pokemon_info");
+pokemonInfo = `${pokemonNumero} - ${pokemonNombre}`; */
 
 // Atributos del Pokémon
 const pokemonAltura = document.querySelector("#pokemon_altura");
@@ -17,8 +19,8 @@ const pokemonTipo1 = document.querySelector("#pokemon_tipo_1");
 const pokemonTipo2 = document.querySelector("#pokemon_tipo_2");
 
 // Imágenes
-let pokemonImagen = document.querySelector(".pokemon_imagen");
-let pokemonShiny = document.querySelector(".pokemon_shiny");
+const pokemonImagen = document.querySelector(".pokemon_imagen");
+const pokemonShiny = document.querySelector(".pokemon_shiny");
 
 // Botones
 const busqueda = document.querySelector(".busqueda");
@@ -77,14 +79,14 @@ const cargarPokemon = async (pokemon) => {
       : data["sprites"]["other"]["official-artwork"]["front_shiny"]; //sprite estático shiny
 
     // Atributos Pokémon
-    pokemonAltura.innerHTML = `Altura: ${data.height / 10} m`;
-    pokemonPeso.innerHTML = `Peso: ${data.weight / 10} kg`;
-    pokemonHp.innerHTML = `HP: ${data["stats"]["0"]["base_stat"]}`;
-    pokemonAtaque.innerHTML = `Ataque: ${data["stats"]["1"]["base_stat"]}`;
-    pokemonAtaqueEspecial.innerHTML = `Ataque Especial: ${data["stats"]["3"]["base_stat"]}`;
-    pokemonDefensa.innerHTML = `Defensa: ${data["stats"]["2"]["base_stat"]}`;
-    pokemonDefensaEspecial.innerHTML = `Defensa Especial: ${data["stats"]["4"]["base_stat"]}`;
-    pokemonVelocidad.innerHTML = `Velocidad: ${data["stats"]["5"]["base_stat"]}`;
+    pokemonAltura.innerHTML = `${data.height / 10} m`;
+    pokemonPeso.innerHTML = `${data.weight / 10} kg`;
+    pokemonHp.innerHTML = data["stats"]["0"]["base_stat"];
+    pokemonAtaque.innerHTML = data["stats"]["1"]["base_stat"];
+    pokemonAtaqueEspecial.innerHTML = data["stats"]["3"]["base_stat"];
+    pokemonDefensa.innerHTML = data["stats"]["2"]["base_stat"];
+    pokemonDefensaEspecial.innerHTML = data["stats"]["4"]["base_stat"];
+    pokemonVelocidad.innerHTML = data["stats"]["5"]["base_stat"];
     pokemonTipo1.innerHTML = `Tipo 1: ${data["types"]["0"]["type"]["name"]}`;
 
     // En caso de que solo tenga un tipo
