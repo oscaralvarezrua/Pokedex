@@ -1,5 +1,4 @@
 "use strict";
-"use strict";
 
 // Declaración de variables
 const pokemonNombre = document.querySelector(".pokemon_nombre");
