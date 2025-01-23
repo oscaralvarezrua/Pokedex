@@ -3,8 +3,6 @@
 // Declaración de variables
 const pokemonNombre = document.querySelector(".pokemon_nombre");
 const pokemonNumero = document.querySelector(".pokemon_numero");
-/* const pokemonInfo = document.querySelector("pokemon_info");
-pokemonInfo = `${pokemonNumero} - ${pokemonNombre}`; */
 
 // Atributos del Pokémon
 const pokemonAltura = document.querySelector("#pokemon_altura");
@@ -87,14 +85,15 @@ const cargarPokemon = async (pokemon) => {
     pokemonDefensa.innerHTML = `${data["stats"]["2"]["base_stat"]}`;
     pokemonDefensaEspecial.innerHTML = `${data["stats"]["4"]["base_stat"]}`;
     pokemonVelocidad.innerHTML = `${data["stats"]["5"]["base_stat"]}`;
-    pokemonTipo1.innerHTML = `Tipo 1: ${data["types"]["0"]["type"]["name"]}`;
+    pokemonTipo1.innerHTML = `${data["types"]["0"]["type"]["name"]}`;
 
     // En caso de que solo tenga un tipo
     if (data["types"]["1"] === undefined) {
       pokemonTipo2.innerHTML = "";
     } else {
-      pokemonTipo2.innerHTML = `Tipo 2: ${data["types"]["1"]["type"]["name"]}`;
+      pokemonTipo2.innerHTML = `${data["types"]["1"]["type"]["name"]}`;
     }
+    /* No hay concidencia con el input */
   } else {
     pokemonImagen.style.display = "none";
     pokemonNombre.innerHTML = "Not found";
@@ -180,6 +179,8 @@ input.addEventListener("input", () => {
     listaResultados.appendChild(unidad);
   });
 });
+
+/* Presionar enter en la búsqueda (input) */
 
 busqueda.addEventListener("submit", (e) => {
   e.preventDefault();
