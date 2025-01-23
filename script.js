@@ -79,14 +79,14 @@ const cargarPokemon = async (pokemon) => {
       : data["sprites"]["other"]["official-artwork"]["front_shiny"]; //sprite estático shiny
 
     // Atributos Pokémon
-    pokemonAltura.innerHTML = `${data.height / 10} m`;
-    pokemonPeso.innerHTML = `${data.weight / 10} kg`;
-    pokemonHp.innerHTML = data["stats"]["0"]["base_stat"];
-    pokemonAtaque.innerHTML = data["stats"]["1"]["base_stat"];
-    pokemonAtaqueEspecial.innerHTML = data["stats"]["3"]["base_stat"];
-    pokemonDefensa.innerHTML = data["stats"]["2"]["base_stat"];
-    pokemonDefensaEspecial.innerHTML = data["stats"]["4"]["base_stat"];
-    pokemonVelocidad.innerHTML = data["stats"]["5"]["base_stat"];
+    pokemonAltura.innerHTML = `Altura: ${data.height / 10} m`;
+    pokemonPeso.innerHTML = `Peso: ${data.weight / 10} kg`;
+    pokemonHp.innerHTML = `HP: ${data["stats"]["0"]["base_stat"]}`;
+    pokemonAtaque.innerHTML = `Ataque: ${data["stats"]["1"]["base_stat"]}`;
+    pokemonAtaqueEspecial.innerHTML = `Ataque Especial ${data["stats"]["3"]["base_stat"]}`;
+    pokemonDefensa.innerHTML = `Defensa: ${data["stats"]["2"]["base_stat"]}`;
+    pokemonDefensaEspecial.innerHTML = `Defensa Especial: ${data["stats"]["4"]["base_stat"]}`;
+    pokemonVelocidad.innerHTML = `Velocidad: ${data["stats"]["5"]["base_stat"]}`;
     pokemonTipo1.innerHTML = `Tipo 1: ${data["types"]["0"]["type"]["name"]}`;
 
     // En caso de que solo tenga un tipo
@@ -97,8 +97,8 @@ const cargarPokemon = async (pokemon) => {
     }
   } else {
     pokemonImagen.style.display = "none";
-    pokemonNombre.innerHTML = "Not found :(";
-    pokemonNumero.innerHTML = "";
+    pokemonNombre.innerHTML = "Not found";
+    pokemonNumero.innerHTML = ":(";
     pokemonAltura.innerHTML = "";
     pokemonPeso.innerHTML = "";
     pokemonHp.innerHTML = "";
@@ -134,8 +134,10 @@ botonVariocolor.addEventListener("click", () => {
 
 // Botón para buscar siguiente Pokémon
 botonSig.addEventListener("click", () => {
-  busquedaPokemon += 1;
-  cargarPokemon(busquedaPokemon);
+  if (busquedaPokemon < todos.length) {
+    busquedaPokemon += 1;
+    cargarPokemon(busquedaPokemon);
+  }
 });
 
 // Filtrar el input dinámicamente
